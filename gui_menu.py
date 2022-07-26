@@ -1,7 +1,6 @@
 from ctypes.wintypes import SIZE
 from tkinter import *
 import random
-from turtle import color
 from PIL import ImageTk,Image
 import tkinter.font as tkFont
 
@@ -21,7 +20,7 @@ label.pack()
 labelImage =None
 photo1,photo2,photo3, photo4, photo5, photo6 = [None] * 6
 
-tk.geometry('800x600')
+tk.geometry('1000x800')
 def event():
     food = random.choice(foodlist)
     if food == "짬뽕":
@@ -43,8 +42,8 @@ def event2():
 
 button = Button(tk,text='추천 메뉴',command=event)
 button2 = Button(tk,text='처음으로' ,command=event2)
-button.pack(side=LEFT,padx=10,pady=10) #side로 배치설정, padx로 좌우 여백설정, pady로 상하 여백설정 
-button2.pack(side=LEFT, padx=10, pady= 10)
+button.pack(side=BOTTOM, padx=10,pady=10) #side로 배치설정, padx로 좌우 여백설정, pady로 상하 여백설정 
+button2.pack(side=BOTTOM, padx=10, pady= 10)
 
 photo1 = ImageTk.PhotoImage(Image.open("C:\dev\Python\hello\Image\짬뽕.jpg"))
 photo2 = ImageTk.PhotoImage(Image.open("C:\dev\Python\hello\Image\짜장면.jpg"))
@@ -53,7 +52,7 @@ photo4 = ImageTk.PhotoImage(Image.open("C:\dev\Python\hello\Image\김밥.jpg"))
 photo5 = ImageTk.PhotoImage(Image.open("C:\dev\Python\hello\Image\라면.jpg"))
 photo6 = ImageTk.PhotoImage(Image.open("C:\dev\Python\hello\Image\국밥.jpg"))
 
-labelImage = Label(tk,width=1200, height=900, bg="yellow", image = None)
+labelImage = Label(tk,width=1200, height=900, image = None)
 labelImage.pack()
 # 4. 메인루프 실행
 tk.mainloop()
